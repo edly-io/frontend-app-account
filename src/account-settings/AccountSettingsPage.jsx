@@ -656,9 +656,9 @@ class AccountSettingsPage extends React.Component {
             <EditableSelectField
               name="year_of_birth"
               type="select"
-              label={this.props.intl.formatMessage(messages['account.settings.field.dob'])}
-              emptyLabel={this.props.intl.formatMessage(messages['account.settings.field.dob.empty'])}
+              label={this.props.formValues.year_of_birth && this.props.intl.formatMessage(messages['account.settings.field.dob']) || ""}
               value={this.props.formValues.year_of_birth}
+              isEditable={false}
               options={yearOfBirthOptions}
               {...editableFieldProps}
             />
