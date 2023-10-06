@@ -76,6 +76,66 @@ const messages = defineMessages({
     defaultMessage: 'The name that identifies you on {siteName}. You cannot change your username.',
     description: 'Help text for the account settings username field.',
   },
+  'account.settings.field.city': {
+    id: 'account.settings.field.city',
+    defaultMessage: 'City',
+    description: 'Label for account settings city field.',
+  },
+  'account.settings.field.city.help.text': {
+    id: 'account.settings.field.city.help.text',
+    defaultMessage: 'Edit your city.',
+    description: 'Help text for the account settings city field.',
+  },
+  'account.settings.field.address_line': {
+    id: 'account.settings.field.address_line',
+    defaultMessage: 'Address Line',
+    description: 'Label for account settings address line field.',
+  },
+  'account.settings.field.address_line.help.text': {
+    id: 'account.settings.field.address_line.help.text',
+    defaultMessage: 'Edit your Address Line.',
+    description: 'Help text for the account settings address line field.',
+  },
+  'account.settings.field.job_title': {
+    id: 'account.settings.field.job_title',
+    defaultMessage: 'Job title',
+    description: 'Label for account settings job title field.',
+  },
+  'account.settings.field.job_title.help.text': {
+    id: 'account.settings.field.job_title.help.text',
+    defaultMessage: 'Edit your job title.',
+    description: 'Help text for the account settings job title field.',
+  },
+  'account.settings.field.national.id': {
+    id: 'account.settings.field.national.id',
+    defaultMessage: 'Saudi National Id',
+    description: 'Label for account settings Saudi National Id field.',
+  },
+  'account.settings.field.national.id.help.text': {
+    id: 'account.settings.field.national.id.help.text',
+    defaultMessage: 'Your saudi national id. You cannot change your national id.',
+    description: 'Help text for the account settings national id field.',
+  },
+  'account.settings.field.phone.number': {
+    id: 'account.settings.field.phone.number',
+    defaultMessage: 'Phone Number',
+    description: 'Label for account settings Phone number field.',
+  },
+  'account.settings.field.phone.number.help.text': {
+    id: 'account.settings.field.phone.number.help.text',
+    defaultMessage: 'The phone number that will be used to contact you.',
+    description: 'Help text for the account settings phone number field.',
+  },
+  'account.settings.field.date.of.birth': {
+    id: 'account.settings.field.date.of.birth',
+    defaultMessage: 'Date of Birth',
+    description: 'Label for account settings Phone number field.',
+  },
+  'account.settings.field.date.of.birth.help.text': {
+    id: 'account.settings.field.date.of.birth.help.text',
+    defaultMessage: 'Edit your date of birth',
+    description: 'Help text for the account settings phone number field.',
+  },
   'account.settings.field.full.name': {
     id: 'account.settings.field.full.name',
     defaultMessage: 'Full name',
@@ -83,7 +143,7 @@ const messages = defineMessages({
   },
   'account.settings.field.full.name.empty': {
     id: 'account.settings.field.full.name.empty',
-    defaultMessage: 'Add name',
+    defaultMessage: 'Edit name',
     description: 'Placeholder for empty account settings name field.',
   },
   'account.settings.field.full.name.help.text': {
@@ -218,7 +278,7 @@ const messages = defineMessages({
   },
   'account.settings.field.email.empty': {
     id: 'account.settings.field.email.empty',
-    defaultMessage: 'Add email address',
+    defaultMessage: 'Edit email address',
     description: 'Placeholder for empty account settings email field.',
   },
   'account.settings.field.email.confirmation': {
@@ -238,7 +298,7 @@ const messages = defineMessages({
   },
   'account.settings.field.secondary.email.empty': {
     id: 'account.settings.field.secondary.email.empty',
-    defaultMessage: 'Add a recovery email address',
+    defaultMessage: 'Edit a recovery email address',
     description: 'Placeholder for empty account settings recovery email field.',
   },
   'account.settings.field.secondary.email.confirmation': {
@@ -258,7 +318,7 @@ const messages = defineMessages({
   },
   'account.settings.field.dob.empty': {
     id: 'account.settings.field.dob.empty',
-    defaultMessage: 'Add year of birth',
+    defaultMessage: 'Edit year of birth',
     description: 'Placeholder for empty account settings year of birth field.',
   },
   'account.settings.field.year_of_birth.options.empty': {
@@ -316,6 +376,16 @@ const messages = defineMessages({
     defaultMessage: 'A technical error occurred. Please try again.',
     description: 'Generic error message.',
   },
+  'account.settings.field.region': {
+    id: 'account.settings.field.region',
+    defaultMessage: 'Region',
+    description: 'Label for account settings region field.',
+  },
+  'account.settings.field.region.empty': {
+    id: 'account.settings.field.region.empty',
+    defaultMessage: 'Edit region',
+    description: 'Placeholder for empty account settings region field.',
+  },
   'account.settings.field.country': {
     id: 'account.settings.field.country',
     defaultMessage: 'Country',
@@ -323,7 +393,7 @@ const messages = defineMessages({
   },
   'account.settings.field.country.empty': {
     id: 'account.settings.field.country.empty',
-    defaultMessage: 'Add country',
+    defaultMessage: 'Edit country',
     description: 'Placeholder for empty account settings country field.',
   },
   'account.settings.field.country.options.empty': {
@@ -338,7 +408,7 @@ const messages = defineMessages({
   },
   'account.settings.field.state.empty': {
     id: 'account.settings.field.state.empty',
-    defaultMessage: 'Add state',
+    defaultMessage: 'Edit state',
     description: 'Placeholder for empty account settings state field.',
   },
   'account.settings.field.state.options.empty': {
@@ -356,6 +426,16 @@ const messages = defineMessages({
     defaultMessage: 'The language used throughout this site. This site is currently available in a limited number of languages.',
     description: 'Help text for the site language field.',
   },
+  'account.settings.field.english_language_level': {
+    id: 'account.settings.field.english_language_level',
+    defaultMessage: 'English Language Level',
+    description: 'Label for account settings english level language field.',
+  },
+  'account.settings.field.english_language_level.empty': {
+    id: 'account.settings.field.english_language_level.empty',
+    defaultMessage: 'Edit your english language level',
+    description: 'Placeholder for empty account settings english level language field.',
+  },
   'account.settings.field.education': {
     id: 'account.settings.field.education',
     defaultMessage: 'Education',
@@ -363,7 +443,7 @@ const messages = defineMessages({
   },
   'account.settings.field.education.empty': {
     id: 'account.settings.field.education.empty',
-    defaultMessage: 'Add level of education',
+    defaultMessage: 'Edit level of education',
     description: 'Placeholder for empty account settings education field.',
   },
   'account.settings.field.education.levels.empty': {
@@ -416,7 +496,26 @@ const messages = defineMessages({
     defaultMessage: 'Other education',
     description: 'Selected by the user if they have a type of education not described by the other choices.',
   },
-
+  'account.settings.field.employment_status': {
+    id: 'account.settings.field.employment_status',
+    defaultMessage: 'Employment Status',
+    description: 'Label for account settings employment status field.',
+  },
+  'account.settings.field.employment_status.empty': {
+    id: 'account.settings.field.employment_status.empty',
+    defaultMessage: 'Edit your current employment status',
+    description: 'Placeholder for empty account settings employment status field.',
+  },
+  'account.settings.field.work_experience_level': {
+    id: 'account.settings.field.work_experience_level',
+    defaultMessage: 'Work Experience Level',
+    description: 'Label for account settings work experience level field.',
+  },
+  'account.settings.field.work_experience_level.empty': {
+    id: 'account.settings.field.work_experience_level.empty',
+    defaultMessage: 'Edit your work experience level',
+    description: 'Placeholder for empty account settings work experience level field.',
+  },
   'account.settings.field.gender': {
     id: 'account.settings.field.gender',
     defaultMessage: 'Gender',
@@ -424,7 +523,7 @@ const messages = defineMessages({
   },
   'account.settings.field.gender.empty': {
     id: 'account.settings.field.gender.empty',
-    defaultMessage: 'Add gender',
+    defaultMessage: 'Edit gender',
     description: 'Placeholder for empty account settings gender field.',
   },
   'account.settings.field.gender.options.empty': {
@@ -454,7 +553,7 @@ const messages = defineMessages({
   },
   'account.settings.field.language.proficiencies.empty': {
     id: 'account.settings.field.language.proficiencies.empty',
-    defaultMessage: 'Add a spoken language',
+    defaultMessage: 'Edit a spoken language',
     description: 'Placeholder for empty account settings spoken language field.',
   },
   'account.settings.field.language_proficiencies.options.empty': {
@@ -511,7 +610,7 @@ const messages = defineMessages({
   },
   'account.settings.field.social.platform.name.linkedin.empty': {
     id: 'account.settings.field.social.platform.name.linkedin.empty',
-    defaultMessage: 'Add LinkedIn profile',
+    defaultMessage: 'Edit LinkedIn profile',
     description: 'Placeholder for an empty LinkedIn field',
   },
   'account.settings.jump.nav.delete.account': {
@@ -526,7 +625,7 @@ const messages = defineMessages({
   },
   'account.settings.field.social.platform.name.twitter.empty': {
     id: 'account.settings.field.social.platform.name.twitter.empty',
-    defaultMessage: 'Add Twitter profile',
+    defaultMessage: 'Edit Twitter profile',
     description: 'Placeholder for an empty Twitter field',
   },
 
@@ -537,7 +636,7 @@ const messages = defineMessages({
   },
   'account.settings.field.social.platform.name.facebook.empty': {
     id: 'account.settings.field.social.platform.name.facebook.empty',
-    defaultMessage: 'Add Facebook profile',
+    defaultMessage: 'Edit Facebook profile',
     description: 'Placeholder for an empty Facebook field',
   },
   'account.settings.editable.field.action.save': {
@@ -564,6 +663,191 @@ const messages = defineMessages({
     id: 'account.settings.static.field.empty.no.admin',
     defaultMessage: 'No value set.',
     description: 'The placeholder for an empty but uneditable field when there is no administrator',
+  },
+  // region options
+  'region.option.Riyadh.text': {
+    id: 'region.option.Riyadh.text',
+    defaultMessage: 'Riyadh',
+    description: 'Nafath Sign Up Form region option Riyadh',
+  },
+  'region.option.Eastern.text': {
+    id: 'region.option.Eastern.text',
+    defaultMessage: 'Eastern',
+    description: 'Nafath Sign Up Form region option Eastern',
+  },
+  'region.option.Asir.text': {
+    id: 'region.option.Asir.text',
+    defaultMessage: 'Asir',
+    description: 'Nafath Sign Up Form region option Asir',
+  },
+  'region.option.Jazan.text': {
+    id: 'region.option.Jazan.text',
+    defaultMessage: 'Jazan',
+    description: 'Nafath Sign Up Form region option Jazan',
+  },
+  'region.option.Medina.text': {
+    id: 'region.option.Medina.text',
+    defaultMessage: 'Medina',
+    description: 'Nafath Sign Up Form region option Medina',
+  },
+  'region.option.Al-Qassim.text': {
+    id: 'region.option.Al-Qassim.text',
+    defaultMessage: 'Al-Qassim',
+    description: 'Nafath Sign Up Form region option Al-Qassim',
+  },
+  'region.option.Tabuk.text': {
+    id: 'region.option.Tabuk.text',
+    defaultMessage: 'Tabuk',
+    description: 'Nafath Sign Up Form region option Tabuk',
+  },
+  "region.option.Ha'il.text": {
+    id: "region.option.Ha'il.text",
+    defaultMessage: "Ha'il",
+    description: "Nafath Sign Up Form region option Ha'il",
+  },
+  'region.option.Najran.text': {
+    id: 'region.option.Najran.text',
+    defaultMessage: 'Najran',
+    description: 'Nafath Sign Up Form region option Najran',
+  },
+  'region.option.Al-Jawf.text': {
+    id: 'region.option.Al-Jawf.text',
+    defaultMessage: 'Al-Jawf',
+    description: 'Nafath Sign Up Form region option Al-Jawf',
+  },
+  'region.option.Al-Bahah.text': {
+    id: 'region.option.Al-Bahah.text',
+    defaultMessage: 'Al-Bahah',
+    description: 'Nafath Sign Up Form region option Al-Bahah',
+  },
+  'region.option.Northern Borders.text': {
+    id: 'region.option.Northern Borders.text',
+    defaultMessage: 'Northern Borders',
+    description: 'Nafath Sign Up Form region option Northern Borders',
+  },
+  // level of education options
+  'education.option.Middle School.text': {
+    id: 'education.option.Middle School.text',
+    defaultMessage: 'Middle School',
+    description: 'Nafath Sign Up Form level of education option Middle School',
+  },
+  'education.option.High School.text': {
+    id: 'education.option.High School.text',
+    defaultMessage: 'High School',
+    description: 'Nafath Sign Up Form level of education option High School',
+  },
+  'education.option.Diploma.text': {
+    id: 'education.option.Diploma.text',
+    defaultMessage: 'Diploma',
+    description: 'Nafath Sign Up Form level of education option Diploma',
+  },
+  'education.option.Bachelor.text': {
+    id: 'education.option.Bachelor.text',
+    defaultMessage: 'Bachelor',
+    description: 'Nafath Sign Up Form level of education option Bachelor',
+  },
+  'education.option.Master.text': {
+    id: 'education.option.Master.text',
+    defaultMessage: 'Master',
+    description: 'Nafath Sign Up Form level of education option Master',
+  },
+  'education.option.Ph.D..text': {
+    id: 'education.option.Ph.D..text',
+    defaultMessage: 'Ph.D.',
+    description: 'Nafath Sign Up Form level of education option Ph.D.',
+  },
+  // english_language_level options
+  'english_language_level.option.0.text': {
+    id: 'english_language_level.option.0.text',
+    defaultMessage: '0',
+    description: 'Nafath Sign Up Form english level language option 0',
+  },
+  'english_language_level.option.1.text': {
+    id: 'english_language_level.option.1.text',
+    defaultMessage: '1',
+    description: 'Nafath Sign Up Form english level language option 1',
+  },
+  'english_language_level.option.2.text': {
+    id: 'english_language_level.option.2.text',
+    defaultMessage: '2',
+    description: 'Nafath Sign Up Form english level language option 2',
+  },
+  'english_language_level.option.3.text': {
+    id: 'english_language_level.option.3.text',
+    defaultMessage: '3',
+    description: 'Nafath Sign Up Form english level language option 3',
+  },
+  'english_language_level.option.4.text': {
+    id: 'english_language_level.option.4.text',
+    defaultMessage: '4',
+    description: 'Nafath Sign Up Form english level language option 4',
+  },
+  'english_language_level.option.5.text': {
+    id: 'english_language_level.option.5.text',
+    defaultMessage: '5',
+    description: 'Nafath Sign Up Form english level language option 5',
+  },
+  'english_language_level.option.6.text': {
+    id: 'english_language_level.option.6.text',
+    defaultMessage: '6',
+    description: 'Nafath Sign Up Form english level language option 6',
+  },
+  'english_language_level.option.7.text': {
+    id: 'english_language_level.option.7.text',
+    defaultMessage: '7',
+    description: 'Nafath Sign Up Form english level language option 7',
+  },
+  'english_language_level.option.8.text': {
+    id: 'english_language_level.option.8.text',
+    defaultMessage: '8',
+    description: 'Nafath Sign Up Form english level language option 8',
+  },
+  'english_language_level.option.9.text': {
+    id: 'english_language_level.option.9.text',
+    defaultMessage: '9',
+    description: 'Nafath Sign Up Form english level language option 9',
+  },
+  // employment_status options
+  'employment_status.option.Public industry.text': {
+    id: 'employment_status.option.Public industry.text',
+    defaultMessage: 'Public industry',
+    description: 'Nafath Sign Up Form employment status option Public industry',
+  },
+  'employment_status.option.Private industry.text': {
+    id: 'employment_status.option.Private industry.text',
+    defaultMessage: 'Private industry',
+    description: 'Nafath Sign Up Form employment status option Private industry',
+  },
+  'employment_status.option.Job seeker.text': {
+    id: 'employment_status.option.Job seeker.text',
+    defaultMessage: 'Job seeker',
+    description: 'Nafath Sign Up Form employment status option Job seeker',
+  },
+  'employment_status.option.Student.text': {
+    id: 'employment_status.option.Student.text',
+    defaultMessage: 'Student',
+    description: 'Nafath Sign Up Form employment status option Student',
+  },
+  // work_experience_level options
+  'work_experience_level.option.Junior level (0-2) years.text': {
+    id: 'work_experience_level.option.Junior level (0-2) years.text',
+    defaultMessage: 'Junior level (0-2) years',
+    description: 'Nafath Sign Up Form work experience level option Junior level (0-2) years',
+  },
+  'work_experience_level.option.Middle level (3-4) years.text': {
+    id: 'work_experience_level.option.Middle level (3-4) years.text',
+    defaultMessage: 'Middle level (3-4) years',
+    description: 'Nafath Sign Up Form work experience level option Middle level (3-4) years',
+  },
+  'work_experience_level.option.Senior level (5-10) years.text': {
+    id: 'work_experience_level.option.Senior level (5-10) years.text',
+    defaultMessage: 'Senior level (5-10) years',
+    description: 'Nafath Sign Up Form work experience level option Senior level (5-10) years',
+  },
+  'work_experience_level.option.Expert (+ 10 years).text': {
+    id: 'work_experience_level.option.Expert (+ 10 years).text',
+    defaultMessage: 'Expert (+ 10 years)',
+    description: 'Nafath Sign Up Form work experience level option Expert (+ 10 years)',
   },
 });
 
