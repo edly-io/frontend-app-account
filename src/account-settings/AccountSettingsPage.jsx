@@ -802,7 +802,8 @@ class AccountSettingsPage extends React.Component {
               { label: [this.props.intl.formatMessage(messages['english_language_level.option.6.text'])], value: '6' },
               { label: [this.props.intl.formatMessage(messages['english_language_level.option.7.text'])], value: '7' },
               { label: [this.props.intl.formatMessage(messages['english_language_level.option.8.text'])], value: '8' },
-              { label: [this.props.intl.formatMessage(messages['english_language_level.option.9.text'])], value: '9' }
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.9.text'])], value: '9' },
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.10.text'])], value: '10' }
             ]}
             label={this.props.intl.formatMessage(messages['account.settings.field.english_language_level'])}
             emptyLabel={this.props.intl.formatMessage(messages['account.settings.field.english_language_level.empty'])}
