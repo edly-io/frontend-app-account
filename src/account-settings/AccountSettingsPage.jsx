@@ -646,6 +646,11 @@ class AccountSettingsPage extends React.Component {
               messages['account.settings.field.phone.number.help.text'],
               { siteName: getConfig().SITE_NAME },
             )}
+            emptyLabel={
+              this.isEditable('phone_number')
+                ? this.props.intl.formatMessage(messages['account.settings.field.phone_number.empty'])
+                : this.renderEmptyStaticFieldMessage()
+            }
             isEditable={true}
             {...editableFieldProps}
           />
@@ -668,10 +673,11 @@ class AccountSettingsPage extends React.Component {
             type="date"
             value={this.props.formValues.date_of_birth}
             label={this.props.intl.formatMessage(messages['account.settings.field.date.of.birth'])}
-            helpText={this.props.intl.formatMessage(
-              messages['account.settings.field.date.of.birth.help.text'],
-              { siteName: getConfig().SITE_NAME },
-            )}
+            emptyLabel={
+              this.isEditable('date_of_birth')
+                ? this.props.intl.formatMessage(messages['account.settings.field.date_of_birth.empty'])
+                : this.renderEmptyStaticFieldMessage()
+            }
             isEditable={true}
             {...editableFieldProps}
           />
@@ -738,10 +744,11 @@ class AccountSettingsPage extends React.Component {
             type="text"
             value={this.props.formValues.city}
             label={this.props.intl.formatMessage(messages['account.settings.field.city'])}
-            helpText={this.props.intl.formatMessage(
-              messages['account.settings.field.city.help.text'],
-              { siteName: getConfig().SITE_NAME },
-            )}
+            emptyLabel={
+              this.isEditable('city')
+                ? this.props.intl.formatMessage(messages['account.settings.field.city.help.text'])
+                : this.renderEmptyStaticFieldMessage()
+            }
             isEditable={true}
             {...editableFieldProps}
           />
@@ -750,10 +757,11 @@ class AccountSettingsPage extends React.Component {
             type="text"
             value={this.props.formValues.address_line}
             label={this.props.intl.formatMessage(messages['account.settings.field.address_line'])}
-            helpText={this.props.intl.formatMessage(
-              messages['account.settings.field.address_line.help.text'],
-              { siteName: getConfig().SITE_NAME },
-            )}
+            emptyLabel={
+              this.isEditable('address_line')
+                ? this.props.intl.formatMessage(messages['account.settings.field.address_line.help.text'])
+                : this.renderEmptyStaticFieldMessage()
+            }
             isEditable={true}
             {...editableFieldProps}
           />
@@ -842,10 +850,11 @@ class AccountSettingsPage extends React.Component {
             type="text"
             value={this.props.formValues.job_title}
             label={this.props.intl.formatMessage(messages['account.settings.field.job_title'])}
-            helpText={this.props.intl.formatMessage(
-              messages['account.settings.field.job_title.help.text'],
-              { siteName: getConfig().SITE_NAME },
-            )}
+            emptyLabel={
+              this.isEditable('job_title')
+                ? this.props.intl.formatMessage(messages['account.settings.field.job_title.help.text'])
+                : this.renderEmptyStaticFieldMessage()
+            }
             isEditable={true}
             {...editableFieldProps}
           />
@@ -918,7 +927,7 @@ class AccountSettingsPage extends React.Component {
             options={this.props.siteLanguageOptions}
             value={this.props.siteLanguage.draft !== undefined ? this.props.siteLanguage.draft : this.context.locale}
             label={this.props.intl.formatMessage(messages['account.settings.field.site.language'])}
-            helpText={this.props.intl.formatMessage(messages['account.settings.field.site.language.help.text'])}
+            emptyLabel={this.props.intl.formatMessage(messages['account.settings.field.site.language.help.text'])}
             {...editableFieldProps}
           />
           <EditableSelectField

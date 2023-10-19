@@ -143,7 +143,7 @@ const messages = defineMessages({
   },
   'account.settings.field.full.name.empty': {
     id: 'account.settings.field.full.name.empty',
-    defaultMessage: 'Edit name',
+    defaultMessage: 'Edit your name',
     description: 'Placeholder for empty account settings name field.',
   },
   'account.settings.field.full.name.help.text': {
@@ -278,8 +278,18 @@ const messages = defineMessages({
   },
   'account.settings.field.email.empty': {
     id: 'account.settings.field.email.empty',
-    defaultMessage: 'Edit email address',
+    defaultMessage: 'Edit your email address',
     description: 'Placeholder for empty account settings email field.',
+  },
+  'account.settings.field.date_of_birth.empty': {
+    id: 'account.settings.field.date_of_birth.empty',
+    defaultMessage: 'Edit your date of birth',
+    description: 'Placeholder for empty account settings date_of_birth field.',
+  },
+  'account.settings.field.phone_number.empty': {
+    id: 'account.settings.field.phone_number.empty',
+    defaultMessage: 'Edit your phone number',
+    description: 'Placeholder for empty account settings phone_number field.',
   },
   'account.settings.field.email.confirmation': {
     id: 'account.settings.field.email.confirmation',
@@ -298,7 +308,7 @@ const messages = defineMessages({
   },
   'account.settings.field.secondary.email.empty': {
     id: 'account.settings.field.secondary.email.empty',
-    defaultMessage: 'Edit a recovery email address',
+    defaultMessage: 'Edit your recovery email address',
     description: 'Placeholder for empty account settings recovery email field.',
   },
   'account.settings.field.secondary.email.confirmation': {
@@ -318,7 +328,7 @@ const messages = defineMessages({
   },
   'account.settings.field.dob.empty': {
     id: 'account.settings.field.dob.empty',
-    defaultMessage: 'Edit year of birth',
+    defaultMessage: 'Edit your year of birth',
     description: 'Placeholder for empty account settings year of birth field.',
   },
   'account.settings.field.year_of_birth.options.empty': {
@@ -383,7 +393,7 @@ const messages = defineMessages({
   },
   'account.settings.field.region.empty': {
     id: 'account.settings.field.region.empty',
-    defaultMessage: 'Edit region',
+    defaultMessage: 'Edit your region',
     description: 'Placeholder for empty account settings region field.',
   },
   'account.settings.field.country': {
@@ -393,7 +403,7 @@ const messages = defineMessages({
   },
   'account.settings.field.country.empty': {
     id: 'account.settings.field.country.empty',
-    defaultMessage: 'Edit country',
+    defaultMessage: 'Edit your country',
     description: 'Placeholder for empty account settings country field.',
   },
   'account.settings.field.country.options.empty': {
@@ -408,7 +418,7 @@ const messages = defineMessages({
   },
   'account.settings.field.state.empty': {
     id: 'account.settings.field.state.empty',
-    defaultMessage: 'Edit state',
+    defaultMessage: 'Edit your state',
     description: 'Placeholder for empty account settings state field.',
   },
   'account.settings.field.state.options.empty': {
@@ -443,7 +453,7 @@ const messages = defineMessages({
   },
   'account.settings.field.education.empty': {
     id: 'account.settings.field.education.empty',
-    defaultMessage: 'Edit level of education',
+    defaultMessage: 'Edit your level of education',
     description: 'Placeholder for empty account settings education field.',
   },
   'account.settings.field.education.levels.empty': {
@@ -523,7 +533,7 @@ const messages = defineMessages({
   },
   'account.settings.field.gender.empty': {
     id: 'account.settings.field.gender.empty',
-    defaultMessage: 'Edit gender',
+    defaultMessage: 'Edit your gender',
     description: 'Placeholder for empty account settings gender field.',
   },
   'account.settings.field.gender.options.empty': {
@@ -553,7 +563,7 @@ const messages = defineMessages({
   },
   'account.settings.field.language.proficiencies.empty': {
     id: 'account.settings.field.language.proficiencies.empty',
-    defaultMessage: 'Edit a spoken language',
+    defaultMessage: 'Edit your spoken language',
     description: 'Placeholder for empty account settings spoken language field.',
   },
   'account.settings.field.language_proficiencies.options.empty': {
@@ -610,7 +620,7 @@ const messages = defineMessages({
   },
   'account.settings.field.social.platform.name.linkedin.empty': {
     id: 'account.settings.field.social.platform.name.linkedin.empty',
-    defaultMessage: 'Edit LinkedIn profile',
+    defaultMessage: 'Edit your LinkedIn profile',
     description: 'Placeholder for an empty LinkedIn field',
   },
   'account.settings.jump.nav.delete.account': {
@@ -625,7 +635,7 @@ const messages = defineMessages({
   },
   'account.settings.field.social.platform.name.twitter.empty': {
     id: 'account.settings.field.social.platform.name.twitter.empty',
-    defaultMessage: 'Edit Twitter profile',
+    defaultMessage: 'Edit your Twitter profile',
     description: 'Placeholder for an empty Twitter field',
   },
 
@@ -636,7 +646,7 @@ const messages = defineMessages({
   },
   'account.settings.field.social.platform.name.facebook.empty': {
     id: 'account.settings.field.social.platform.name.facebook.empty',
-    defaultMessage: 'Edit Facebook profile',
+    defaultMessage: 'Edit your Facebook profile',
     description: 'Placeholder for an empty Facebook field',
   },
   'account.settings.editable.field.action.save': {
