@@ -88,7 +88,6 @@ export async function patchAccount(username, commitValues) {
   const requestConfig = {
     headers: { 'Content-Type': 'application/merge-patch+json' },
   };
-  debugger;
   const { data } = await getAuthenticatedHttpClient()
     .patch(
       `${getConfig().LMS_BASE_URL}/api/user/v1/accounts/${username}`,
