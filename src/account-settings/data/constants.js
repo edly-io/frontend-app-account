@@ -32,7 +32,6 @@ export const GENDER_OPTIONS = [
   '',
   'f',
   'm',
-  'o',
 ];
 
 export const COUNTRY_WITH_STATES = 'US';

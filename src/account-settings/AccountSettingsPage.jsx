@@ -150,6 +150,22 @@ class AccountSettingsPage extends React.Component {
   }));
 
   handleEditableFieldChange = (name, value) => {
+    if (name === 'phone_number') {
+      if (value.length > 50 || !value.match(/^[0-9+]+$/)) {
+        value = value.substring(0, value.length - 1);
+      }
+      if (value.startsWith(' ')) {
+        value = value.trim();
+      }
+    }
+    if (name === 'job_title') {
+      if (value.length > 63) {
+        value = value.substring(0, value.length - 1);
+      }
+      if (value.startsWith(' ')) {
+        value = value.trim();
+      }
+    }
     this.props.updateDraft(name, value);
   };
 
@@ -588,7 +604,22 @@ class AccountSettingsPage extends React.Component {
               onSubmit={this.handleSubmitVerifiedName}
             />
             )}
-
+          {this.props.formValues.national_id && (
+            <EditableField
+              name="nationalId"
+              type="text"
+              value={this.props.formValues.national_id}
+              label={this.props.intl.formatMessage(
+                messages["account.settings.field.national.id"]
+              )}
+              helpText={this.props.intl.formatMessage(
+                messages["account.settings.field.national.id.help.text"],
+                { siteName: getConfig().SITE_NAME }
+              )}
+              isEditable={false}
+              {...editableFieldProps}
+            />
+          )}
           <EmailField
             name="email"
             label={this.props.intl.formatMessage(messages['account.settings.field.email'])}
@@ -606,6 +637,23 @@ class AccountSettingsPage extends React.Component {
             isEditable={this.isEditable('email')}
             {...editableFieldProps}
           />
+          <EditableField
+            name="phone_number"
+            type="tel"
+            value={this.props.formValues.phone_number}
+            label={this.props.intl.formatMessage(messages['account.settings.field.phone.number'])}
+            helpText={this.props.intl.formatMessage(
+              messages['account.settings.field.phone.number.help.text'],
+              { siteName: getConfig().SITE_NAME },
+            )}
+            emptyLabel={
+              this.isEditable('phone_number')
+                ? this.props.intl.formatMessage(messages['account.settings.field.phone_number.empty'])
+                : this.renderEmptyStaticFieldMessage()
+            }
+            isEditable={true}
+            {...editableFieldProps}
+          />
           {this.renderSecondaryEmailField(editableFieldProps)}
           <ResetPassword email={this.props.formValues.email} />
           {(!getConfig().ENABLE_COPPA_COMPLIANCE)
@@ -613,13 +661,26 @@ class AccountSettingsPage extends React.Component {
             <EditableSelectField
               name="year_of_birth"
               type="select"
-              label={this.props.intl.formatMessage(messages['account.settings.field.dob'])}
-              emptyLabel={this.props.intl.formatMessage(messages['account.settings.field.dob.empty'])}
+              label={this.props.formValues.year_of_birth && this.props.intl.formatMessage(messages['account.settings.field.dob']) || ""}
               value={this.props.formValues.year_of_birth}
+              isEditable={false}
               options={yearOfBirthOptions}
               {...editableFieldProps}
             />
             )}
+           <EditableField
+            name="date_of_birth"
+            type="date"
+            value={this.props.formValues.date_of_birth}
+            label={this.props.intl.formatMessage(messages['account.settings.field.date.of.birth'])}
+            emptyLabel={
+              this.isEditable('date_of_birth')
+                ? this.props.intl.formatMessage(messages['account.settings.field.date_of_birth.empty'])
+                : this.renderEmptyStaticFieldMessage()
+            }
+            isEditable={true}
+            {...editableFieldProps}
+          />
           <EditableSelectField
             name="country"
             type="select"
@@ -651,24 +712,65 @@ class AccountSettingsPage extends React.Component {
               {...editableFieldProps}
             />
             )}
+          <EditableSelectField
+            name="region"
+            type="select"
+            value={this.props.formValues.region}
+            options={[
+              { label: [this.props.intl.formatMessage(messages['region.option.Riyadh.text'])], value: "RD" },
+              { label: [this.props.intl.formatMessage(messages['region.option.Eastern.text'])], value: "ER" },
+              { label: [this.props.intl.formatMessage(messages['region.option.Asir.text'])], value: "AI" },
+              { label: [this.props.intl.formatMessage(messages['region.option.Jazan.text'])], value: "JA" },
+              { label: [this.props.intl.formatMessage(messages['region.option.Medina.text'])], value: "MN" },
+              { label: [this.props.intl.formatMessage(messages['region.option.Al-Qassim.text'])], value: "AS" },
+              { label: [this.props.intl.formatMessage(messages['region.option.Tabuk.text'])], value: "TU" },
+              { label: [this.props.intl.formatMessage(messages["region.option.Ha'il.text"])], value: "HI" },
+              { label: [this.props.intl.formatMessage(messages['region.option.Najran.text'])], value: "NA" },
+              { label: [this.props.intl.formatMessage(messages['region.option.Al-Jawf.text'])], value: "AW" },
+              { label: [this.props.intl.formatMessage(messages['region.option.Al-Bahah.text'])], value: "AA" },
+              { label: [this.props.intl.formatMessage(messages['region.option.Northern Borders.text'])], value: "NB" },
+            ]}
+            label={this.props.intl.formatMessage(messages['account.settings.field.region'])}
+            emptyLabel={
+              this.isEditable('country')
+                ? this.props.intl.formatMessage(messages['account.settings.field.region.empty'])
+                : this.renderEmptyStaticFieldMessage()
+            }
+            isEditable={this.isEditable('country')}
+            {...editableFieldProps}
+          />
+          <EditableField
+            name="city"
+            type="text"
+            value={this.props.formValues.city}
+            label={this.props.intl.formatMessage(messages['account.settings.field.city'])}
+            emptyLabel={
+              this.isEditable('city')
+                ? this.props.intl.formatMessage(messages['account.settings.field.city.help.text'])
+                : this.renderEmptyStaticFieldMessage()
+            }
+            isEditable={true}
+            {...editableFieldProps}
+          />
+          <EditableField
+            name="address_line"
+            type="text"
+            value={this.props.formValues.address_line}
+            label={this.props.intl.formatMessage(messages['account.settings.field.address_line'])}
+            emptyLabel={
+              this.isEditable('address_line')
+                ? this.props.intl.formatMessage(messages['account.settings.field.address_line.help.text'])
+                : this.renderEmptyStaticFieldMessage()
+            }
+            isEditable={true}
+            {...editableFieldProps}
+          />
         </div>
 
         <div className="account-section pt-3 mb-5" id="profile-information" ref={this.navLinkRefs['#profile-information']}>
           <h2 className="section-heading h4 mb-3">
             {this.props.intl.formatMessage(messages['account.settings.section.profile.information'])}
           </h2>
-
-          <EditableSelectField
-            name="level_of_education"
-            type="select"
-            value={this.props.formValues.level_of_education}
-            options={getConfig().ENABLE_COPPA_COMPLIANCE
-              ? educationLevelOptions.filter(option => option.value !== 'el')
-              : educationLevelOptions}
-            label={this.props.intl.formatMessage(messages['account.settings.field.education'])}
-            emptyLabel={this.props.intl.formatMessage(messages['account.settings.field.education.empty'])}
-            {...editableFieldProps}
-          />
           <EditableSelectField
             name="gender"
             type="select"
@@ -676,6 +778,84 @@ class AccountSettingsPage extends React.Component {
             options={genderOptions}
             label={this.props.intl.formatMessage(messages['account.settings.field.gender'])}
             emptyLabel={this.props.intl.formatMessage(messages['account.settings.field.gender.empty'])}
+            {...editableFieldProps}
+          />
+          <EditableSelectField
+            name="level_of_education"
+            type="select"
+            value={this.props.formValues.level_of_education}
+            options={[
+              { label: [this.props.intl.formatMessage(messages['education.option.Middle School.text'])], value: 'MS' },
+              { label: [this.props.intl.formatMessage(messages['education.option.High School.text'])], value: 'HS' },
+              { label: [this.props.intl.formatMessage(messages['education.option.Diploma.text'])], value: 'DM' },
+              { label: [this.props.intl.formatMessage(messages['education.option.Bachelor.text'])], value: 'BS' },
+              { label: [this.props.intl.formatMessage(messages['education.option.Master.text'])], value: 'MR' },
+              { label: [this.props.intl.formatMessage(messages['education.option.Ph.D..text'])], value: 'PH' }
+            ]}
+            label={this.props.intl.formatMessage(messages['account.settings.field.education'])}
+            emptyLabel={this.props.intl.formatMessage(messages['account.settings.field.education.empty'])}
+            {...editableFieldProps}
+          />
+          <EditableSelectField
+            name="english_language_level"
+            type="select"
+            value={this.props.formValues.english_language_level}
+            options={[
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.0.text'])], value: '0' },
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.1.text'])], value: '1' },
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.2.text'])], value: '2' },
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.3.text'])], value: '3' },
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.4.text'])], value: '4' },
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.5.text'])], value: '5' },
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.6.text'])], value: '6' },
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.7.text'])], value: '7' },
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.8.text'])], value: '8' },
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.9.text'])], value: '9' },
+              { label: [this.props.intl.formatMessage(messages['english_language_level.option.10.text'])], value: '10' }
+            ]}
+            label={this.props.intl.formatMessage(messages['account.settings.field.english_language_level'])}
+            emptyLabel={this.props.intl.formatMessage(messages['account.settings.field.english_language_level.empty'])}
+            {...editableFieldProps}
+          />
+          <EditableSelectField
+            name="employment_status"
+            type="select"
+            value={this.props.formValues.employment_status}
+            options={[
+              { label: [this.props.intl.formatMessage(messages['employment_status.option.Public industry.text'])], value: 'PU' },
+              { label: [this.props.intl.formatMessage(messages['employment_status.option.Private industry.text'])], value: 'PR' },
+              { label: [this.props.intl.formatMessage(messages['employment_status.option.Job seeker.text'])], value: 'JS' },
+              { label: [this.props.intl.formatMessage(messages['employment_status.option.Student.text'])], value: 'ST' }
+            ]}
+            label={this.props.intl.formatMessage(messages['account.settings.field.employment_status'])}
+            emptyLabel={this.props.intl.formatMessage(messages['account.settings.field.employment_status.empty'])}
+            {...editableFieldProps}
+          />
+          <EditableSelectField
+            name="work_experience_level"
+            type="select"
+            value={this.props.formValues.work_experience_level}
+            options={[
+              { label: [this.props.intl.formatMessage(messages['work_experience_level.option.Junior level (0-2) years.text'])], value: 'JL' },
+              { label: [this.props.intl.formatMessage(messages['work_experience_level.option.Middle level (3-4) years.text'])], value: 'ML' },
+              { label: [this.props.intl.formatMessage(messages['work_experience_level.option.Senior level (5-10) years.text'])], value: 'SL' },
+              { label: [this.props.intl.formatMessage(messages['work_experience_level.option.Expert (+ 10 years).text'])], value: 'EL' }
+            ]}
+            label={this.props.intl.formatMessage(messages['account.settings.field.work_experience_level'])}
+            emptyLabel={this.props.intl.formatMessage(messages['account.settings.field.work_experience_level.empty'])}
+            {...editableFieldProps}
+          />
+          <EditableField
+            name="job_title"
+            type="text"
+            value={this.props.formValues.job_title}
+            label={this.props.intl.formatMessage(messages['account.settings.field.job_title'])}
+            emptyLabel={
+              this.isEditable('job_title')
+                ? this.props.intl.formatMessage(messages['account.settings.field.job_title.help.text'])
+                : this.renderEmptyStaticFieldMessage()
+            }
+            isEditable={true}
             {...editableFieldProps}
           />
           <EditableSelectField
@@ -747,7 +927,7 @@ class AccountSettingsPage extends React.Component {
             options={this.props.siteLanguageOptions}
             value={this.props.siteLanguage.draft !== undefined ? this.props.siteLanguage.draft : this.context.locale}
             label={this.props.intl.formatMessage(messages['account.settings.field.site.language'])}
-            helpText={this.props.intl.formatMessage(messages['account.settings.field.site.language.help.text'])}
+            emptyLabel={this.props.intl.formatMessage(messages['account.settings.field.site.language.help.text'])}
             {...editableFieldProps}
           />
           <EditableSelectField

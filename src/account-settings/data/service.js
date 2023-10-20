@@ -41,6 +41,11 @@ function unpackAccountResponseData(data) {
 }
 
 function packAccountCommitData(commitData) {
+  const { date_of_birth } = commitData;
+  if (date_of_birth) {
+    const date = new Date(date_of_birth);
+    commitData.year_of_birth = (date.getFullYear()) + '';
+  }
   const packedData = commitData;
 
   SOCIAL_PLATFORMS.forEach(({ id, key }) => {
@@ -83,7 +88,6 @@ export async function patchAccount(username, commitValues) {
   const requestConfig = {
     headers: { 'Content-Type': 'application/merge-patch+json' },
   };
-
   const { data } = await getAuthenticatedHttpClient()
     .patch(
       `${getConfig().LMS_BASE_URL}/api/user/v1/accounts/${username}`,
