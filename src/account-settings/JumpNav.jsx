@@ -31,7 +31,7 @@ const JumpNav = ({
           'linked-accounts',
           'delete-account',
         ]}
-        className="list-unstyled"
+        className="list-unstyled accountWrap__list"
         currentClassName="font-weight-bold"
       >
         <li>

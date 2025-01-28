@@ -190,7 +190,7 @@ const EditableSelectField = (props) => {
                 </Button>
               ) : null}
             </div>
-            <p data-hj-suppress className={isGrayedOut ? 'grayed-out' : null}>{renderValue(value)}</p>
+            <p data-hj-suppress className={isGrayedOut ? 'grayed-out' : 'text-truncate'}>{renderValue(value)}</p>
             <p className="small text-muted mt-n2">{renderConfirmationMessage() || helpText}</p>
           </div>
         ),
