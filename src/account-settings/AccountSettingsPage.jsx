@@ -836,7 +836,7 @@ class AccountSettingsPage extends React.Component {
     } = this.props;
 
     return (
-      <div className="page__account-settings container-fluid py-5 accountWrap">
+      <div className="page__account-settings container-fluid py-5 ">
         {this.renderDuplicateTpaProviderMessage()}
         <h1 className="mb-4 heading">
           {this.props.intl.formatMessage(messages['account.settings.page.heading'])}
