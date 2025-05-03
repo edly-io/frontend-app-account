@@ -6,9 +6,8 @@ import { AppProvider, ErrorPage } from '@edx/frontend-platform/react';
 import {
   subscribe, initialize, APP_INIT_ERROR, APP_READY, mergeConfig,
 } from '@edx/frontend-platform';
-import React, { StrictMode } from 'react';
-// eslint-disable-next-line import/no-unresolved
-import { createRoot } from 'react-dom/client';
+import React from 'react';
+import ReactDOM from 'react-dom'; // ✅ Use ReactDOM instead
 import { Route, Routes, Outlet } from 'react-router-dom';
 
 import Header from '@edx/frontend-component-header';
@@ -22,39 +21,37 @@ import messages from './i18n';
 import './index.scss';
 import Head from './head/Head';
 
-const rootNode = createRoot(document.getElementById('root'));
+const rootNode = document.getElementById('root');
 subscribe(APP_READY, () => {
-  rootNode.render(
-    <StrictMode>
-      <AppProvider store={configureStore()}>
-        <Head />
-        <Routes>
-          <Route element={(
-            <div className="d-flex flex-column" style={{ minHeight: '100vh' }}>
-              <Header />
-              <main className="flex-grow-1" id="main">
-                <Outlet />
-              </main>
-              <FooterSlot />
-            </div>
-        )}
-          >
-            <Route
-              path="/id-verification/*"
-              element={<IdVerificationPageSlot />}
-            />
-            <Route path="/" element={<AccountSettingsPage />} />
-            <Route path="/notfound" element={<NotFoundPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-      </AppProvider>
-    </StrictMode>,
+  ReactDOM.render( // ✅ React 17 API
+    <AppProvider store={configureStore()}>
+      <Head />
+      <Routes>
+        <Route element={(
+          <div className="d-flex flex-column" style={{ minHeight: '100vh' }}>
+            <Header />
+            <main className="flex-grow-1" id="main">
+              <Outlet />
+            </main>
+            <FooterSlot />
+          </div>
+        )}>
+          <Route
+            path="/id-verification/*"
+            element={<IdVerificationPageSlot />}
+          />
+          <Route path="/" element={<AccountSettingsPage />} />
+          <Route path="/notfound" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </AppProvider>,
+    rootNode
   );
 });
 
 subscribe(APP_INIT_ERROR, (error) => {
-  rootNode.render(<ErrorPage message={error.message} />);
+  ReactDOM.render(<ErrorPage message={error.message} />, rootNode);
 });
 
 initialize({
