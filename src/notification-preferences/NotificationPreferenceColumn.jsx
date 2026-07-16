@@ -39,12 +39,18 @@ const NotificationPreferenceColumn = ({ appId, channel, appPreference }) => {
     return checked;
   }, []);
 
-  const getEmailCadence = useCallback((notificationChannel, checked, innerText, emailCadence) => {
+  const getEmailCadence = useCallback((
+    notificationChannel,
+    checked,
+    innerText,
+    emailCadence,
+    cadenceLocked = false,
+  ) => {
     if (notificationChannel === EMAIL_CADENCE) {
       return innerText;
     }
     if (notificationChannel === EMAIL && checked) {
-      return EMAIL_CADENCE_PREFERENCES.DAILY;
+      return cadenceLocked ? emailCadence : EMAIL_CADENCE_PREFERENCES.DAILY;
     }
     return emailCadence;
   }, []);
@@ -59,6 +65,7 @@ const NotificationPreferenceColumn = ({ appId, channel, appPreference }) => {
       checked,
       innerText,
       appNotificationPreference.emailCadence,
+      appNotificationPreference.cadenceLocked,
     );
 
     dispatch(updatePreferenceToggle(
@@ -96,7 +103,7 @@ const NotificationPreferenceColumn = ({ appId, channel, appPreference }) => {
         onToggle={onToggle}
         emailCadence={preference.emailCadence}
         notificationType={preference.id}
-        disabled={nonEditable[preference.id]?.includes(channel)}
+        disabled={nonEditable[preference.id]?.includes(channel) || preference.cadenceLocked}
       />
       )}
     </div>
@@ -131,6 +138,7 @@ NotificationPreferenceColumn.propTypes = {
   appPreference: PropTypes.shape({
     id: PropTypes.string,
     emailCadence: PropTypes.string,
+    cadenceLocked: PropTypes.bool,
     appId: PropTypes.string,
     info: PropTypes.string,
     email: PropTypes.bool,
