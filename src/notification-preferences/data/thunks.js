@@ -50,6 +50,7 @@ const normalizePreferences = (responseData) => {
         info: preferences[appId].notificationTypes[preferenceId].info || '',
         emailCadence: preferences[appId].notificationTypes[preferenceId].emailCadence
         || EMAIL_CADENCE_PREFERENCES.DAILY,
+        cadenceLocked: preferences[appId].notificationTypes[preferenceId].cadenceLocked || false,
         coreNotificationTypes: preferences[appId].coreNotificationTypes || [],
       }
     ));
@@ -122,7 +123,7 @@ export const updatePreferenceToggle = (
         const emailCadenceData = await togglePreference(
           EMAIL_CADENCE,
           value,
-          EMAIL_CADENCE_PREFERENCES.DAILY,
+          emailCadence || EMAIL_CADENCE_PREFERENCES.DAILY,
         );
 
         handleSuccessResponse(emailCadenceData);

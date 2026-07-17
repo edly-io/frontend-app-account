@@ -14,6 +14,9 @@ const messages = defineMessages({
       coursework {Course Work}
       updates {Updates}
       grading {Grading}
+      calendar {Calendar}
+      requests {Requests}
+      learning {Learning}
       other {{key}}
     }`,
     description: 'Display text for Notification Types',
@@ -30,6 +33,29 @@ const messages = defineMessages({
       oraStaffNotifications {New ORA submission for staff grading}
       oraGradeAssigned {Essay assignment grade received}
       newInstructorAllLearnersPost {New posts from instructors}
+      sessionScheduled {New session scheduled}
+      sessionCancelled {Session cancelled}
+      sessionRescheduled {Session rescheduled}
+      sessionAssigned {Session assigned}
+      substituteAssigned {Assigned as substitute}
+      sessionScheduleChanged {Session schedule changed}
+      substituteNeeded {Substitute needed}
+      newLeaveRequest {New leave request}
+      leaveRequestUpdate {Leave request updates}
+      newRemoteSessionRequest {New remote session request}
+      remoteSessionUpdate {Remote session request updates}
+      newProfileUpdateRequest {New profile update request}
+      profileUpdateRequest {Profile update request updates}
+      instructorCourseAdded {Added as course instructor}
+      traineeEnrolledInProgram {Enrolled in program}
+      adminTraineeEnrolled {Trainee enrolled in program}
+      newUserCreated {New user created}
+      newUserInRegion {New user in your region}
+      userActivated {User account activated}
+      userDeactivated {User account deactivated}
+      accountActivated {Your account has been activated}
+      sessionReminder {Session reminder}
+      assignmentDueReminder {Assignment due reminder}
       other {{text}}
     }`,
     description: 'Display text for Notification Types',
