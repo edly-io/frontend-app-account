@@ -17,6 +17,7 @@ const messages = defineMessages({
       calendar {Calendar}
       requests {Requests}
       learning {Learning}
+      announcements {Announcements}
       other {{key}}
     }`,
     description: 'Display text for Notification Types',
@@ -37,6 +38,7 @@ const messages = defineMessages({
       sessionCancelled {Session cancelled}
       sessionRescheduled {Session rescheduled}
       sessionAssigned {Session assigned}
+      sessionUnassigned {Unassigned from session}
       substituteAssigned {Assigned as substitute}
       sessionScheduleChanged {Session schedule changed}
       substituteNeeded {Substitute needed}
@@ -54,6 +56,8 @@ const messages = defineMessages({
       userActivated {User account activated}
       userDeactivated {User account deactivated}
       accountActivated {Your account has been activated}
+      accountReactivated {Your account has been reactivated}
+      announcementPosted {New announcement}
       sessionReminder {Session reminder}
       assignmentDueReminder {Assignment due reminder}
       other {{text}}
